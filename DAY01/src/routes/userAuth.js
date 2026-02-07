@@ -5,6 +5,7 @@ const {register, login,logout, adminRegister} = require('../controllers/userAuth
 const userMiddleware = require("../middleware/userMiddleware");
 const adminMiddleware = require('../middleware/adminMiddleware');
 
+
 // Register
 authRouter.post('/register', register);
 authRouter.post('/login', login);
