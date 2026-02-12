@@ -11,7 +11,7 @@ const submitCode = async (req,res)=>{
 
        const {code,language} = req.body;
 
-      if(!userId||!code||!problemId||!langauage)
+      if(!userId||!code||!problemId||!language)
         return res.status(400).send("Some field missing");
 
     //    Fetch the problem from database
