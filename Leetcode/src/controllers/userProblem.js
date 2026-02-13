@@ -1,6 +1,7 @@
 const {getLanguageById,submitBatch,submitToken} = require("../utils/problemUtility");
 const Problem = require("../models/problem");
 const User = require("../models/user");
+const Submission = require("../models/submission");
 
 const createProblem = async (req,res)=>{
 
@@ -213,6 +214,26 @@ const solvedAllProblembyUser =  async(req,res)=>{
     catch(err){
       res.status(500).send("Server Error");
     }
+}
+
+const submittedProblem = async(req,res)=>{
+
+  try{
+     
+    const userId = req.result._id;
+    const problemId = req.params.pid;
+
+  const ans = await Submission.find({userId,problemId});
+  
+  if(ans.length==0)
+    res.status(200).send("No Submission is persent");
+
+  res.status(200).send(ans);
+
+  }
+  catch(err){
+     res.status(500).send("Internal Server Error");
+  }
 }
 
 
