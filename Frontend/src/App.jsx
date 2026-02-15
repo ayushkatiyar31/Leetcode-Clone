@@ -17,7 +17,8 @@ function App(){
     dispatch(checkAuth());
   }, [dispatch]);
 
-
+  console.log(user)
+  console.log(isAuthenticated);
   
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">
