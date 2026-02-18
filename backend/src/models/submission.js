@@ -42,14 +42,13 @@ const submissionSchema = new Schema({
     type: Number,
     default: 0
   },
-  testCasesTotal: {  // Recommended addition
+  testCasesTotal: {  
     type: Number,
     default: 0
   }
 }, { 
   timestamps: true
 });
-
 
 
 submissionSchema.index({userId:1 , problemId:1});
